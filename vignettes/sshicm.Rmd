@@ -53,12 +53,18 @@ $$
 where $d_i$ is the random variable corresponding to the target variable in stratum $s_i$ , and $f_{d_i}$ and $f$ are the density functions of $d_i$ and $d$, respectively. Additionally, $\textbf{RelE} \left( f_{d_{i}} \mid \mid  f \right)$ is the relative entropy of $f_{d_i}$ and $f$.
 
 $$
-\textbf{RelE} \left( f_{d_{i}} \mid \mid  f \right) = H \left(f_{d_{i}} , f\right) - H \left(f_{d_{i}}\right) = \sum_{i = 1}^{n} f_{d_{i}} \log_{2} \frac{1}{f} - \sum_{i = 1}^{n} f_{d_{i}} \log_{2} \frac{1}{f_{d_{i}}} = \sum_{i = 1}^{n} f_{d_{i}} \log_{2} \frac{f_{d_{i}}}{f}
+\textbf{RelE} \left( f_{d_{i}} \mid \mid  f \right) = H \left(f_{d_{i}} , f\right) - H \left(f_{d_{i}}\right) = \sum_{i = 1}^{n} f_{d_{i}} \log \frac{1}{f} - \sum_{i = 1}^{n} f_{d_{i}} \log \frac{1}{f_{d_{i}}} = \sum_{i = 1}^{n} f_{d_{i}} \log \frac{f_{d_{i}}}{f}
 $$
 
 ### 2.2 When the dependent variable is a nominal variable:
 
+$$
+I_{N}\left(d,s\right) = \frac{I \left(d,s\right)}{I \left(d\right)} = 
+\frac{I \left(d\right) - I \left(d \mid s\right)}{I \left(d\right)} = 
+1 - \frac{\sum_{s_i \in S}\sum_{x \in V_d} p\left(s_i,x\right) \log p\left(x \mid s_i\right)}{\sum_{x \in V_d} p\left(x\right) \log p\left(x\right)}
+$$
 
+where $p\left(x\right)$ is the probability of observing $x$ in $U$, $p\left(s_i,x\right)$ is the probability of observing $s_i$ and $x$ in $U$, and $p\left(x \mid s_i\right)$ is the probability of observing $x$ given that the stratum is $s_i$.
 
 
 ## Reference
