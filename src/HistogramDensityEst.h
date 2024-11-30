@@ -15,4 +15,4 @@ std::vector<std::pair<double, double>> HistogramDensityEst(const std::vector<dou
 std::vector<std::pair<double, double>> HistogramDensityEstWithBins(const std::vector<double>& data,
                                                                    const std::vector<double>& bins);
 
-#endif // HistogramDensityEst
+#endif // HistogramDensityEst_H
