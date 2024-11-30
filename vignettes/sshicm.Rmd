@@ -67,6 +67,8 @@ $$
 where $p\left(x\right)$ is the probability of observing $x$ in $U$, $p\left(s_i,x\right)$ is the probability of observing $s_i$ and $x$ in $U$, and $p\left(x \mid s_i\right)$ is the probability of observing $x$ given that the stratum is $s_i$.
 
 
+
+
 ## Reference
 
 
