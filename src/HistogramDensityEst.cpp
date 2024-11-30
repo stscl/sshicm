@@ -84,3 +84,54 @@ std::vector<std::pair<double, double>> HistogramDensityEst(const std::vector<dou
 
   return density;
 }
+
+// Compute density using predefined bins
+std::vector<std::pair<double, double>> HistogramDensityEstWithBins(const std::vector<double>& data,
+                                                                   const std::vector<double>& bins) {
+  size_t n = data.size();
+  size_t bin_count = bins.size() - 1;
+
+  if (n < 2) {
+    throw std::invalid_argument("Data size must be at least 2.");
+  }
+
+  if (bins.size() < 2) {
+    throw std::invalid_argument("Bins vector must have at least two elements.");
+  }
+
+  // Check bins are sorted
+  if (!std::is_sorted(bins.begin(), bins.end())) {
+    throw std::invalid_argument("Bins vector must be sorted in ascending order.");
+  }
+
+  // Initialize counts for each bin
+  std::vector<int> counts(bin_count, 0);
+
+  // Count the number of data points in each bin
+  for (double value : data) {
+    for (size_t i = 0; i < bin_count; ++i) {
+      if (value >= bins[i] && value < bins[i + 1]) {
+        counts[i]++;
+        break;
+      }
+    }
+    // Special case: Include the last bin's right edge
+    if (value == bins.back()) {
+      counts[bin_count - 1]++;
+    }
+  }
+
+  // Compute density for each bin
+  std::vector<std::pair<double, double>> density;
+  for (size_t i = 0; i < bin_count; ++i) {
+    double bin_width = bins[i + 1] - bins[i];
+    if (bin_width <= 0) {
+      throw std::invalid_argument("Bin widths must be positive.");
+    }
+    double bin_center = (bins[i] + bins[i + 1]) / 2.0;
+    double bin_density = static_cast<double>(counts[i]) / (n * bin_width);
+    density.emplace_back(bin_center, bin_density);
+  }
+
+  return density;
+}
