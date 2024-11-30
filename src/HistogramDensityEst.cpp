@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <algorithm>
+#include <numeric>
 #include <stdexcept>
 
 // Compute IQR (Interquartile Range)
@@ -16,8 +17,7 @@ double ComputeIQR(const std::vector<double>& data) {
 }
 
 // Compute bin width or bin count based on different methods
-int CalculateBins(const std::vector<double>& data,
-                  const std::string& method) {
+int CalculateBins(const std::vector<double>& data, const std::string& method) {
   size_t n = data.size();
   if (n < 2) {
     throw std::invalid_argument("Data size must be at least 2.");
@@ -26,8 +26,11 @@ int CalculateBins(const std::vector<double>& data,
   if (method == "SquareRoot") {
     return static_cast<int>(std::ceil(std::sqrt(n)));
   } else if (method == "Scott") {
-    double stddev = std::sqrt(std::inner_product(data.begin(), data.end(), data.begin(), 0.0) / n -
-                              std::pow(std::accumulate(data.begin(), data.end(), 0.0) / n, 2));
+    // Compute standard deviation
+    double mean = std::accumulate(data.begin(), data.end(), 0.0) / n;
+    double variance = std::inner_product(data.begin(), data.end(), data.begin(), 0.0) / n - mean * mean;
+    double stddev = std::sqrt(variance);
+
     double bin_width = 3.49 * stddev / std::cbrt(n);
     return static_cast<int>(std::ceil((data.back() - data.front()) / bin_width));
   } else if (method == "FreedmanDiaconis") {
