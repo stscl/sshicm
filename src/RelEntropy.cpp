@@ -30,18 +30,22 @@ double RelEntropy(const std::vector<double>& DIvec,
   // Step 2: Compute density FD for filtered_Dvec
   std::vector<std::pair<double, double>> FD = HistogramDensityEst(filtered_Dvec, bin_method);
 
-  // Extract bin centers from FD
+  // Extract number of bins used in FD
+  size_t bin_count = FD.size();
+
+  // Step 3: Calculate actual bin right edges
   std::vector<double> bins;
-  for (const auto& pair : FD) {
-    bins.push_back(pair.first); // Extract bin centers
+  double bin_width = (max_DI - min_DI) / bin_count; // Calculate bin width
+  for (size_t i = 1; i <= bin_count; ++i) {
+    bins.push_back(min_DI + i * bin_width); // Calculate right edge of each bin
   }
 
-  // Step 3: Compute density FDI for DIvec using the same bins
+  // Step 4: Compute density FDI for DIvec using the same bins
   std::vector<std::pair<double, double>> FDI = HistogramDensityEstWithBins(DIvec, bins);
 
-  // Step 4: Compute relative entropy
+  // Step 5: Compute relative entropy
   double rel_entropy = 0.0;
-  for (size_t i = 0; i < FD.size(); ++i) {
+  for (size_t i = 0; i < bin_count; ++i) {
     double fd = FD[i].second;   // Density from FD
     double fdi = FDI[i].second; // Density from FDI
     if (fd > 0 && fdi > 0) { // Avoid log(0) and division by zero
@@ -51,3 +55,4 @@ double RelEntropy(const std::vector<double>& DIvec,
 
   return rel_entropy;
 }
+

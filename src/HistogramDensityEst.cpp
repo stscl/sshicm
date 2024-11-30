@@ -39,6 +39,8 @@ int CalculateBins(const std::vector<double>& data, const std::string& method) {
     return static_cast<int>(std::ceil((data.back() - data.front()) / bin_width));
   } else if (method == "Sturges") {
     return static_cast<int>(std::ceil(std::log2(n) + 1));
+  } else if (method == "Rice") {
+    return static_cast<int>(std::ceil(2 * std::cbrt(n)));
   } else {
     throw std::invalid_argument("Unknown binning method.");
   }
