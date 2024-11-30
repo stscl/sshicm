@@ -1,0 +1,20 @@
+---
+title: "Information Consistency-Based Measures for Spatial Stratified Heterogeneity"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sshicm}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "##",
+  fig.path = "man/figures/sshicm/"
+)
+```
+
+```{r setup}
+library(sshicm)
+```
