@@ -11,11 +11,15 @@ License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+URL: https://stscl.github.io/sshicm/, https://github.com/stscl/sshicm
+BugReports: https://github.com/stscl/sshicm/issues
+Depends: 
+    R (>= 4.1.0)
+LinkingTo: 
+    Rcpp,
+    RcppThread
 Suggests: 
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-LinkingTo: 
-    Rcpp
-Imports: 
-    Rcpp
+
