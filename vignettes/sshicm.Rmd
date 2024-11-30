@@ -1,5 +1,7 @@
 ---
 title: "Information Consistency-Based Measures for Spatial Stratified Heterogeneity"
+author: "Wenbo Lv"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{sshicm}
@@ -15,6 +17,53 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(sshicm)
-```
+&nbsp; 
+
+## 1. Introduction to `sshicm` package
+
+### 1.1 The `sshicm` package can be used to address following issues:
+
+- Information consistency-based measures of spatial stratified heterogeneity intensity for continuous and nominal variables.
+
+- Strength of spatial pattern associations based on information consistency measures.
+
+### 1.2 Example data in the `sshicm` package
+
+#### baltim data
+
+"baltim" consists of [Baltimore home sale prices and hedonics][5]. In total, there are 221 instances in "baltim" data. The explanatory variables are whether it is a detached unit (DWELL), whether it has a patio (PATIO), whether it has a fireplace (FIREPL), whether it has air conditioning (AC), and whether the dwelling is in Baltimore County (CITCOU, while the target variable is the sale price of the home (PRICE).
+
+
+#### cinc data
+
+"cinc" is derived from [the 2008 Cincinnati Crime + Socio-Demographics dataset][6]. It includes spatial data on 457 objects located on an irregular lattice. The explanatory variables are male population (MALE), female population (FEMALE), median age (MEDIAN_AGE), average family size (AVG_FAMSIZ), and population density (DENSITY), while the target variable is the existence of theft (THEFT_D).
+
+![**Figure 1**. Maps of the baltim and cinc data sets. ([Bai et al. 2020][2])](../man/figures/sshicm/sshicm_example_data.jpg){width=500px}
+
+
+
+## Reference
+
+
+
+Wang, J., Haining, R., Zhang, T., Xu, C., Hu, M., Yin, Q., … Chen, H. (2024). Statistical Modeling of Spatially Stratified Heterogeneous Data. Annals of the American Association of Geographers, 114(3), 499–519. [https://doi.org/10.1080/24694452.2023.2289982][1].
+
+Bai, H., Wang, H., Li, D., & Ge, Y. (2023). Information Consistency-Based Measures for Spatial Stratified Heterogeneity. Annals of the American Association of Geographers, 113(10), 2512–2524. [https://doi.org/10.1080/24694452.2023.2223700][2].
+
+Wang, J., Li, X., Christakos, G., Liao, Y., Zhang, T., Gu, X., & Zheng, X. (2010). Geographical Detectors‐Based Health Risk Assessment and its Application in the Neural Tube Defects Study of the Heshun Region, China. International Journal of Geographical Information Science, 24(1), 107–127. [https://doi.org/10.1080/13658810802443457][3].
+
+Wang, J. F., Zhang, T. L., & Fu, B. J. A measure of spatial stratified heterogeneity. Ecological indicators, 2016. 67, 250-256. [https://doi.org/10.1016/j.ecolind.2016.02.052][4].
+
+
+
+&nbsp; 
+
+[1]: https://doi.org/10.1080/24694452.2023.2289982
+[2]: https://doi.org/10.1080/24694452.2023.2223700
+[3]: https://doi.org/10.1080/13658810802443457
+[4]: https://doi.org/10.1016/j.ecolind.2016.02.052
+[5]: https://geodacenter.github.io/data-and-lab/baltim/
+[6]: https://geodacenter.github.io/data-and-lab/walnut_hills/
+
+&nbsp; 
+&nbsp; 
