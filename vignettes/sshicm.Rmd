@@ -53,12 +53,12 @@ $$
 where $d_i$ is the random variable corresponding to the target variable in stratum $s_i$ , and $f_{d_i}$ and $f$ are the density functions of $d_i$ and $d$, respectively. Additionally, $\textbf{RelE} \left( f_{d_{i}} \mid \mid  f \right)$ is the relative entropy of $f_{d_i}$ and $f$.
 
 $$
-\textbf{RelE} \left( f_{d_{i}} \mid \mid  f \right) = H \left(f_{d_{i}} , f\right) - H \left(f\right) = \sum_{i = 1}^{n} f \log_{2} \frac{1}{f_{d_{i}}} - \sum_{i = 1}^{n} f \log_{2} \frac{1}{f} = \sum_{i = 1}^{n} f \log_{2} \frac{f}{f_{d_{i}}}
+\textbf{RelE} \left( f_{d_{i}} \mid \mid  f \right) = H \left(f_{d_{i}} , f\right) - H \left(f_{d_{i}}\right) = \sum_{i = 1}^{n} f_{d_{i}} \log_{2} \frac{1}{f} - \sum_{i = 1}^{n} f_{d_{i}} \log_{2} \frac{1}{f_{d_{i}}} = \sum_{i = 1}^{n} f_{d_{i}} \log_{2} \frac{f_{d_{i}}}{f}
 $$
 
-
-
 ### 2.2 When the dependent variable is a nominal variable:
+
+
 
 
 ## Reference
