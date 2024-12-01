@@ -11,6 +11,9 @@
 #' @export
 #'
 #' @examples
+#' baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
+#' sshic(baltim$PRICE,baltim$DWELL)
+#'
 sshic = \(d, s, seed = 42,
           permutation_number = 999,
           bin_method = "FreedmanDiaconis") {
