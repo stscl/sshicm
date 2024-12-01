@@ -4,13 +4,7 @@
 \alias{sshic}
 \title{Measurement of Spatial Stratified Heterogeneity Based on Information Consistency for Continuous Variables}
 \usage{
-sshic(
-  d,
-  s,
-  seed = 42,
-  permutation_number = 999,
-  bin_method = "FreedmanDiaconis"
-)
+sshic(d, s, seed = 42, permutation_number = 999, bin_method = "Sturges")
 }
 \arguments{
 \item{d}{The target variable.}
@@ -22,7 +16,7 @@ sshic(
 \item{permutation_number}{(optional) Number of Random Permutations, default is \code{999}.}
 
 \item{bin_method}{(optional) Histogram binning method for probability density estimation, default is
-\code{FreedmanDiaconis}.}
+\code{Sturges}.}
 }
 \value{
 A two-element numerical vector.
