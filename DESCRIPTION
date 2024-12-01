@@ -20,6 +20,6 @@ LinkingTo:
     RcppThread
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    sf
 VignetteBuilder: knitr
-

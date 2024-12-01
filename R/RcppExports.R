@@ -5,7 +5,7 @@ IC_SSH <- function(d, s, bin_method) {
     .Call(`_sshicm_IC_SSH`, d, s, bin_method)
 }
 
-IC_SSHICM <- function(d, s, seed, permutation_number, bin_method = "SquareRoot") {
+IC_SSHICM <- function(d, s, seed, permutation_number, bin_method = "Sturges") {
     .Call(`_sshicm_IC_SSHICM`, d, s, seed, permutation_number, bin_method)
 }
 

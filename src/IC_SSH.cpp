@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <map>
 #include <unordered_map>
 #include <random>
 #include <cmath>
@@ -22,13 +23,13 @@ double IC_SSH(const std::vector<double>& d,
     throw std::invalid_argument("Vectors s and d must have the same length.");
   }
 
-  // Step 1: Group `d` by unique values in `s`
-  std::unordered_map<int, std::vector<double>> grouped_d;
+  // Step 1: Group `d` by unique values in `s` using std::map to ensure ordered keys
+  std::map<int, std::vector<double>> grouped_d;
   for (size_t i = 0; i < s.size(); ++i) {
     grouped_d[s[i]].push_back(d[i]);
   }
 
-  // Step 2: Compute p(s_i) for each unique value in `s`
+  // Step 2: Compute p(s_i) for each unique value in `s` using the same order
   std::unordered_map<int, double> probabilities;
   for (const auto& pair : grouped_d) {
     probabilities[pair.first] = static_cast<double>(pair.second.size()) / s.size();
@@ -56,7 +57,7 @@ std::vector<double> IC_SSHICM(const std::vector<double>& d,
                               const std::vector<int>& s,
                               unsigned int seed,
                               int permutation_number,
-                              const std::string& bin_method = "SquareRoot") {
+                              const std::string& bin_method = "Sturges") {
   if (s.size() != d.size()) {
     throw std::invalid_argument("Vectors s and d must have the same length.");
   }
@@ -74,11 +75,11 @@ std::vector<double> IC_SSHICM(const std::vector<double>& d,
     std::mt19937 gen(seed + i);  // Modify seed for each thread
 
     // Step 2.1: Permute s
-    std::vector<int> permuted_s = s;  // Copy the original s
-    std::shuffle(permuted_s.begin(), permuted_s.end(), gen); // Shuffle based on the unique seed for each thread
+    std::vector<double> permuted_d = d;  // Copy the original d
+    std::shuffle(permuted_d.begin(), permuted_d.end(), gen); // Shuffle based on the unique seed for each thread
 
     // Step 2.2: Compute IC for the permuted s
-    IC_results[i] = IC_SSH(d, permuted_s, bin_method);
+    IC_results[i] = IC_SSH(permuted_d, s, bin_method);
   });
 
   // Step 3: Compute p-value by comparing permuted IC values to the true IC value
