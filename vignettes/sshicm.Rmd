@@ -81,6 +81,16 @@ where $p\left(x\right)$ is the probability of observing $x$ in $U$, $p\left(s_i,
 
 ## 3. Examples of the `sshicm` package
 
+```r
+install.packages("sshicm", dep = TRUE)
+```
+
+
+```{r}
+library(sshicm)
+```
+
+
 ```{r}
 baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 sshicm(PRICE ~ .,baltim,type = "IC")
