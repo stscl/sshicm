@@ -51,11 +51,26 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// IN_SSHICM
+std::vector<double> IN_SSHICM(const std::vector<int>& d, const std::vector<int>& s, unsigned int seed, int permutation_number);
+RcppExport SEXP _sshicm_IN_SSHICM(SEXP dSEXP, SEXP sSEXP, SEXP seedSEXP, SEXP permutation_numberSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::vector<int>& >::type d(dSEXP);
+    Rcpp::traits::input_parameter< const std::vector<int>& >::type s(sSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type seed(seedSEXP);
+    Rcpp::traits::input_parameter< int >::type permutation_number(permutation_numberSEXP);
+    rcpp_result_gen = Rcpp::wrap(IN_SSHICM(d, s, seed, permutation_number));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_sshicm_IC_SSH", (DL_FUNC) &_sshicm_IC_SSH, 3},
     {"_sshicm_IC_SSHICM", (DL_FUNC) &_sshicm_IC_SSHICM, 5},
     {"_sshicm_IN_SSH", (DL_FUNC) &_sshicm_IN_SSH, 2},
+    {"_sshicm_IN_SSHICM", (DL_FUNC) &_sshicm_IN_SSHICM, 4},
     {NULL, NULL, 0}
 };
 

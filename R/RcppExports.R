@@ -13,3 +13,7 @@ IN_SSH <- function(d, s) {
     .Call(`_sshicm_IN_SSH`, d, s)
 }
 
+IN_SSHICM <- function(d, s, seed, permutation_number) {
+    .Call(`_sshicm_IN_SSHICM`, d, s, seed, permutation_number)
+}
+
