@@ -90,12 +90,14 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">baltim</span> <span class="op">=</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">read_sf</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/baltim.gpkg"</span>,package <span class="op">=</span> <span class="st">"sshicm"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">sshicm</span><span class="op">(</span><span class="va">PRICE</span> <span class="op">~</span> <span class="va">.</span>,<span class="va">baltim</span>,type <span class="op">=</span> <span class="st">"IC"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::select(dplyr::mutate(res, Variable = names(xtbl)), Variable,     IC, PV):</span> Can't select columns that don't exist.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Column `IC` doesn't exist.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::mutate(purrr::map_dfr(xtbl, function(.x) sshic(yvec, .x,     seed, permutation_number, bin_method)), res, Variable = names(xtbl)):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `res`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> object 'res' not found</span>
 <span class="r-in"><span><span class="va">cinc</span> <span class="op">=</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">read_sf</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/cinc.gpkg"</span>,package <span class="op">=</span> <span class="st">"sshicm"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">sshicm</span><span class="op">(</span><span class="va">THEFT_D</span> <span class="op">~</span> <span class="va">.</span>,<span class="va">cinc</span>,type <span class="op">=</span> <span class="st">"IN"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::select(dplyr::mutate(res, Variable = names(xtbl)), Variable,     IC, PV):</span> Can't select columns that don't exist.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Column `IC` doesn't exist.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::mutate(purrr::map_dfr(xtbl, function(.x) sshin(yvec, .x,     seed, permutation_number)), res, Variable = names(xtbl)):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `res`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> object 'res' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
