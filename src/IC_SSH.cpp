@@ -54,8 +54,8 @@ double IC_SSH(const std::vector<double>& d,
 // [[Rcpp::export]]
 std::vector<double> IC_SSHICM(const std::vector<double>& d,
                               const std::vector<int>& s,
-                              int permutation_count,
                               unsigned int seed,
+                              int permutation_number,
                               const std::string& bin_method = "SquareRoot") {
   if (s.size() != d.size()) {
     throw std::invalid_argument("Vectors s and d must have the same length.");
@@ -65,11 +65,11 @@ std::vector<double> IC_SSHICM(const std::vector<double>& d,
   double true_IC = IC_SSH(d, s, bin_method);
 
   // Step 2: Generate random permutations of s and compute IC for each
-  std::vector<double> IC_results(permutation_count, 0.0);  // Store IC values for each permutation
+  std::vector<double> IC_results(permutation_number, 0.0);  // Store IC values for each permutation
 
   // Initialize the random number generator with the seed
   // The seed will change for each thread based on its index
-  RcppThread::parallelFor(0, permutation_count, [&](size_t i) {
+  RcppThread::parallelFor(0, permutation_number, [&](size_t i) {
     // Generate a unique seed for each permutation
     std::mt19937 gen(seed + i);  // Modify seed for each thread
 
@@ -89,7 +89,7 @@ std::vector<double> IC_SSHICM(const std::vector<double>& d,
     }
   }
 
-  double p_value = static_cast<double>(greater_count) / permutation_count;
+  double p_value = static_cast<double>(greater_count) / permutation_number;
 
   // Return a vector containing the true IC and p-value
   return {true_IC, p_value};
