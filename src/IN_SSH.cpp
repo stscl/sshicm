@@ -5,6 +5,10 @@
 #include <algorithm>
 #include <numeric>
 #include <stdexcept>
+#include <RcppThread.h>
+
+// [[Rcpp::plugins(cpp11)]]
+// [[Rcpp::depends(RcppThread)]]
 
 // Function to compute the frequency of each element in a vector
 std::map<int, int> ComputeFrequency(const std::vector<int>& data) {
@@ -85,6 +89,7 @@ double ComputeConditionalEntropy(const std::map<int, double>& marginal_probabili
 }
 
 // Function to compute IN_SSH
+// [[Rcpp::export]]
 double IN_SSH(const std::vector<int>& d, const std::vector<int>& s) {
   if (d.size() != s.size()) {
     throw std::invalid_argument("Vectors d and s must have the same length.");

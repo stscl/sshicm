@@ -9,3 +9,7 @@ IC_SSHICM <- function(d, s, seed, permutation_number, bin_method = "Sturges") {
     .Call(`_sshicm_IC_SSHICM`, d, s, seed, permutation_number, bin_method)
 }
 
+IN_SSH <- function(d, s) {
+    .Call(`_sshicm_IN_SSH`, d, s)
+}
+
