@@ -69,20 +69,22 @@ std::vector<double> IC_SSHICM(const std::vector<double>& d,
   std::vector<double> IC_results(permutation_number, 0.0);  // Store IC values for each permutation
 
   // Initialize the random number generator with the seed
-  // The seed will change for each thread based on its index
+  std::mt19937 gen(seed);
+
+  // Step 3: Perform parallel computation
   RcppThread::parallelFor(0, permutation_number, [&](size_t i) {
     // Generate a unique seed for each permutation
-    std::mt19937 gen(seed + i);  // Modify seed for each thread
+    std::mt19937 local_gen(seed + i);  // Modify seed for each thread
 
-    // Step 2.1: Permute s
+    // Step 3.1: Permute d
     std::vector<double> permuted_d = d;  // Copy the original d
-    std::shuffle(permuted_d.begin(), permuted_d.end(), gen); // Shuffle based on the unique seed for each thread
+    std::shuffle(permuted_d.begin(), permuted_d.end(), local_gen); // Shuffle based on the unique seed for each thread
 
-    // Step 2.2: Compute IC for the permuted s
+    // Step 3.2: Compute IC for the permuted d
     IC_results[i] = IC_SSH(permuted_d, s, bin_method);
   });
 
-  // Step 3: Compute p-value by comparing permuted IC values to the true IC value
+  // Step 4: Compute p-value by comparing permuted IC values to the true IC value
   int greater_count = 0;
   for (size_t i = 0; i < IC_results.size(); ++i) {
     if (IC_results[i] >= true_IC) {
