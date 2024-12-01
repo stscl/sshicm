@@ -18,8 +18,10 @@ Depends:
 LinkingTo: 
     Rcpp,
     RcppThread
+Imports: 
+    sdsfun (>= 0.5.0),
+    sf
 Suggests: 
     knitr,
-    rmarkdown,
-    sf
+    rmarkdown
 VignetteBuilder: knitr
