@@ -6,7 +6,7 @@ Authors@R:
            email = "lyu.geosocial@gmail.com", 
            role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0002-6003-3800"))
-Description: Spatial stratified heterogeneity (SSH) denotes the coexistence of within-strata homogeneity and between-strata heterogeneity. Information consistency-based methods provide a rigorous approach to quantify SSH and evaluate its role in spatial processes, grounded in principles of geographical stratification and information theory (Bai et al 2023 <doi:10.1080/24694452.2023.2223700>; Wang et al 2024 <doi:10.1080/24694452.2023.2289982>).
+Description: Spatial stratified heterogeneity (SSH) denotes the coexistence of within-strata homogeneity and between-strata heterogeneity. Information consistency-based methods provide a rigorous approach to quantify SSH and evaluate its role in spatial processes, grounded in principles of geographical stratification and information theory (Bai et al., 2023 <doi:10.1080/24694452.2023.2223700>; Wang et al., 2024 <doi:10.1080/24694452.2023.2289982>).
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
