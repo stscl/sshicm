@@ -38,7 +38,7 @@ knitr::opts_chunk$set(
 
 "cinc" is derived from [the 2008 Cincinnati Crime + Socio-Demographics dataset][6]. It includes spatial data on 457 objects located on an irregular lattice. The explanatory variables are male population (MALE), female population (FEMALE), median age (MEDIAN_AGE), average family size (AVG_FAMSIZ), and population density (DENSITY), while the target variable is the existence of theft (THEFT_D).
 
-![**Figure 1**. Maps of the baltim and cinc data sets. ([Bai et al. 2020][2])](../man/figures/sshicm/sshicm_example_data.jpg){width=500px}
+![**Figure 1**. Maps of the baltim and cinc data sets. ([Bai et al. 2023][2])](../man/figures/sshicm/sshicm_example_data.jpg){width=500px}
 
 ## 2. The principle of measuring spatial stratified heterogeneity based on information consistency
 
