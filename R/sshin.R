@@ -17,6 +17,6 @@ sshin = \(d, s, seed = 42,
   d = as.integer(as.factor(d))
   s = as.integer(as.factor(s))
   res = IN_SSHICM(d,s,seed,permutation_number)
-  names(res) = c("IC","PV")
+  names(res) = c("In","Pv")
   return(res)
 }

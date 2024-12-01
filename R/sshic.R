@@ -19,6 +19,6 @@ sshic = \(d, s, seed = 42,
           bin_method = "Sturges") {
   s = as.integer(as.factor(s))
   res = IC_SSHICM(d,s,seed,permutation_number,bin_method)
-  names(res) = c("IC","PV")
+  names(res) = c("Ic","Pv")
   return(res)
 }
