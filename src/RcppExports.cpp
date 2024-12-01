@@ -25,23 +25,24 @@ BEGIN_RCPP
 END_RCPP
 }
 // IC_SSHICM
-std::vector<double> IC_SSHICM(const std::vector<double>& d, const std::vector<int>& s, const std::vector<std::vector<int>>& permutation, const std::string& bin_method);
-RcppExport SEXP _sshicm_IC_SSHICM(SEXP dSEXP, SEXP sSEXP, SEXP permutationSEXP, SEXP bin_methodSEXP) {
+std::vector<double> IC_SSHICM(const std::vector<double>& d, const std::vector<int>& s, int permutation_count, unsigned int seed, const std::string& bin_method);
+RcppExport SEXP _sshicm_IC_SSHICM(SEXP dSEXP, SEXP sSEXP, SEXP permutation_countSEXP, SEXP seedSEXP, SEXP bin_methodSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::vector<double>& >::type d(dSEXP);
     Rcpp::traits::input_parameter< const std::vector<int>& >::type s(sSEXP);
-    Rcpp::traits::input_parameter< const std::vector<std::vector<int>>& >::type permutation(permutationSEXP);
+    Rcpp::traits::input_parameter< int >::type permutation_count(permutation_countSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type seed(seedSEXP);
     Rcpp::traits::input_parameter< const std::string& >::type bin_method(bin_methodSEXP);
-    rcpp_result_gen = Rcpp::wrap(IC_SSHICM(d, s, permutation, bin_method));
+    rcpp_result_gen = Rcpp::wrap(IC_SSHICM(d, s, permutation_count, seed, bin_method));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_sshicm_IC_SSH", (DL_FUNC) &_sshicm_IC_SSH, 3},
-    {"_sshicm_IC_SSHICM", (DL_FUNC) &_sshicm_IC_SSHICM, 4},
+    {"_sshicm_IC_SSHICM", (DL_FUNC) &_sshicm_IC_SSHICM, 5},
     {NULL, NULL, 0}
 };
 
