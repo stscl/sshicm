@@ -32,14 +32,14 @@ sshicm = \(formula, data, type = 'IC', seed = 42,
                          \(.x) sshic(yvec,.x,seed,
                                      permutation_number,
                                      bin_method)) |>
-      dplyr::mutate(res,Variable = names(xtbl)) |>
+      dplyr::mutate(Variable = names(xtbl)) |>
       dplyr::select(Variable,Ic,Pv) |>
       dplyr::arrange(dplyr::desc(Ic))
   } else {
     res = purrr::map_dfr(xtbl,
                          \(.x) sshin(yvec,.x,seed,
                                      permutation_number)) |>
-      dplyr::mutate(res,Variable = names(xtbl)) |>
+      dplyr::mutate(Variable = names(xtbl)) |>
       dplyr::select(Variable,In,Pv) |>
       dplyr::arrange(dplyr::desc(In))
   }
