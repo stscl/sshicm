@@ -45,11 +45,12 @@ double RelEntropy(const std::vector<double>& DIvec,
 
   // Step 5: Compute relative entropy
   double rel_entropy = 0.0;
+  double integral_step = (FD[1].first - FD[0].first);
   for (size_t i = 0; i < bin_count; ++i) {
     double fd = FD[i].second;   // Density from FD
     double fdi = FDI[i].second; // Density from FDI
     if (fd > 0 && fdi > 0) { // Avoid log(0) and division by zero
-      rel_entropy += fdi * std::log(fdi / fd);
+      rel_entropy += fdi * std::log(fdi / fd) * integral_step;
     }
   }
 
