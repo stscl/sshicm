@@ -79,6 +79,22 @@ $$
 where $p\left(x\right)$ is the probability of observing $x$ in $U$, $p\left(s_i,x\right)$ is the probability of observing $s_i$ and $x$ in $U$, and $p\left(x \mid s_i\right)$ is the probability of observing $x$ given that the stratum is $s_i$.
 
 
+## 3. Examples of the `sshicm` package
+
+```{r}
+baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
+sshicm(PRICE ~ .,baltim,type = "IC")
+```
+
+```{r}
+cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
+sshicm(THEFT_D ~ .,cinc,type = "IN")
+```
+
+```{r}
+ntds = gdverse::NTDs
+sshicm(incidence ~ watershed + elevation + soiltype,data = ntds)
+```
 
 
 ## Reference
