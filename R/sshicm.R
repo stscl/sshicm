@@ -13,7 +13,7 @@
 #'
 #' @examples
 #' baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
-#' sshicm(PRICE ~ .,baltim,type = "Ic")
+#' sshicm(PRICE ~ .,baltim,type = "IC")
 #' cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 #' sshicm(THEFT_D ~ .,cinc,type = "IN")
 #'
@@ -37,6 +37,8 @@ sshicm = \(formula, data, type = 'IC', seed = 42,
                          \(.x) sshin(yvec,.x,seed,
                                      permutation_number))
   }
-
+  res = dplyr::mutate(res,Variable = names(xtbl)) |>
+    dplyr::select(Variable,IC,PV) |>
+    dplyr::arrange(dplyr::desc(IC))
   return(res)
 }

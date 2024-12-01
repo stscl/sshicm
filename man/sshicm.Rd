@@ -35,7 +35,7 @@ Information Consistency-Based Measures for Spatial Stratified Heterogeneity
 }
 \examples{
 baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
-sshicm(PRICE ~ .,baltim,type = "Ic")
+sshicm(PRICE ~ .,baltim,type = "IC")
 cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 sshicm(THEFT_D ~ .,cinc,type = "IN")
 
