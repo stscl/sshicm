@@ -34,9 +34,11 @@ A \code{tibble}.
 Information Consistency-Based Measures for Spatial Stratified Heterogeneity
 }
 \examples{
+\donttest{
+# This code may take a bit longer to execute:
 baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 sshicm(PRICE ~ .,baltim,type = "IC")
 cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 sshicm(THEFT_D ~ .,cinc,type = "IN")
-
+}
 }
