@@ -20,6 +20,7 @@ LinkingTo:
     RcppThread
 Imports: 
     dplyr,
+    purrr,
     sdsfun (>= 0.5.0),
     sf
 Suggests: 
