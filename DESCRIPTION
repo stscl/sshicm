@@ -24,6 +24,7 @@ Imports:
     sdsfun (>= 0.5.0),
     sf
 Suggests: 
+    gdverse,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
