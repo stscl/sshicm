@@ -9,9 +9,11 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
+#' # This code may take a bit longer to execute:
 #' cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 #' sshin(cinc$THEFT_D,cinc$MALE)
-#'
+#' }
 sshin = \(d, s, seed = 42,
           permutation_number = 999) {
   d = as.integer(as.factor(d))
