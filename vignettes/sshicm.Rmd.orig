@@ -1,7 +1,7 @@
 ---
 title: "Information Consistency-Based Measures for Spatial Stratified Heterogeneity"
 author: "Wenbo Lv"
-date: "2024-12-01"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{sshicm}
@@ -9,7 +9,13 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "##",
+  fig.path = "man/figures/sshicm/"
+)
+```
 
 &nbsp; 
 
@@ -80,50 +86,24 @@ install.packages("sshicm", dep = TRUE)
 ```
 
 
-
-``` r
+```{r}
 library(sshicm)
 ```
 
 
-
-``` r
+```{r}
 baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 sshicm(PRICE ~ .,baltim,type = "IC")
-## # A tibble: 5 × 3
-##   Variable     Ic      Pv
-##   <chr>     <dbl>   <dbl>
-## 1 DWELL    0.648  0.00801
-## 2 AC       0.223  0.0591 
-## 3 PATIO    0.168  0.556  
-## 4 FIREPL   0.135  0.667  
-## 5 CITCOU   0.0898 0.988
 ```
 
-
-``` r
+```{r}
 cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 sshicm(THEFT_D ~ .,cinc,type = "IN")
-## # A tibble: 5 × 3
-##   Variable        In      Pv
-##   <chr>        <dbl>   <dbl>
-## 1 DENSITY    0.776   0.0681 
-## 2 MEDIAN_AGE 0.228   0.0230 
-## 3 MALE       0.0367  0      
-## 4 AVG_FAMSIZ 0.0205  0.00300
-## 5 FEMALE     0.00584 0.0200
 ```
 
-
-``` r
+```{r}
 ntds = gdverse::NTDs
 sshicm(incidence ~ watershed + elevation + soiltype,data = ntds)
-## # A tibble: 3 × 3
-##   Variable     Ic     Pv
-##   <chr>     <dbl>  <dbl>
-## 1 elevation 0.293 0.0250
-## 2 watershed 0.177 0.0521
-## 3 soiltype  0.117 0.0671
 ```
 
 
