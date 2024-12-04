@@ -8,6 +8,8 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-cyan.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN](https://www.r-pkg.org/badges/version/sshicm)](https://CRAN.R-project.org/package=sshicm)
+[![DownloadsAll](https://badgen.net/cran/dt/sshicm?color=orange)](https://CRAN.R-project.org/package=sshicm)
+[![DownloadsMonth](https://cranlogs.r-pkg.org/badges/sshicm)](https://CRAN.R-project.org/package=sshicm)
 [![R-universe](https://stscl.r-universe.dev/badges/sshicm?color=cyan)](https://stscl.r-universe.dev/sshicm)
 <!-- badges: end -->
 
