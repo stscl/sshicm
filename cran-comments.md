@@ -2,4 +2,5 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This release better supports information consistency-based measures for spatial stratified heterogeneity. 
+For more details, please refer to `NEWS.md`.
