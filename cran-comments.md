@@ -2,4 +2,5 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This release enhances support for information-based measures of spatial stratified heterogeneity. 
+See `NEWS.md` for details.
