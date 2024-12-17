@@ -11,14 +11,12 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
-#' # This code may take a bit longer to execute:
 #' baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 #' sshic(baltim$PRICE,baltim$DWELL)
-#' }
+#'
 sshic = \(d, s, seed = 42, permutation_number = 999, bin_method = "Sturges") {
   s = as.integer(as.factor(s))
-  res = IC_SSHICM(d,s,seed,permutation_number,bin_method)
+  res = RcppICSSHICM(d,s,seed,permutation_number,bin_method)
   names(res) = c("Ic","Pv")
   return(res)
 }

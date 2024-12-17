@@ -90,7 +90,6 @@ double ComputeConditionalEntropy(const std::map<int, double>& marginal_probabili
 }
 
 // Function to compute IN_SSH
-// [[Rcpp::export]]
 double IN_SSH(const std::vector<int>& d, const std::vector<int>& s) {
   if (d.size() != s.size()) {
     throw std::invalid_argument("Vectors d and s must have the same length.");
@@ -120,7 +119,6 @@ double IN_SSH(const std::vector<int>& d, const std::vector<int>& s) {
 }
 
 // IN_SSHICM: Parallel computation of IN_SSH over permutations, returning IN_SSH value and p-value
-// [[Rcpp::export]]
 std::vector<double> IN_SSHICM(const std::vector<int>& d,
                               const std::vector<int>& s,
                               unsigned int seed,
