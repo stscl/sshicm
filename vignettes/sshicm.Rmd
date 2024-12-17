@@ -119,11 +119,11 @@ sshicm(THEFT_D ~ .,cinc,type = "IN")
 ntds = gdverse::NTDs
 sshicm(incidence ~ watershed + elevation + soiltype,data = ntds)
 ## # A tibble: 3 × 3
-##   Variable     Ic      Pv
-##   <chr>     <dbl>   <dbl>
-## 1 elevation 0.306 0      
-## 2 watershed 0.205 0      
-## 3 soiltype  0.121 0.00200
+##   Variable      Ic      Pv
+##   <chr>      <dbl>   <dbl>
+## 1 watershed 0.285  0.00400
+## 2 elevation 0.246  0.0110 
+## 3 soiltype  0.0793 0.198
 ```
 
 
