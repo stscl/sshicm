@@ -19,7 +19,7 @@
 #' cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 #' sshicm(THEFT_D ~ .,cinc,type = "IN")
 #' }
-sshicm = \(formula, data, type = 'IC', seed = 42,
+sshicm = \(formula, data, type = c("IC","IN"), seed = 42,
            permutation_number = 999, bin_method = "Sturges"){
   formulavar = sdsfun::formula_varname(formula,data)
   yvec = data[,formulavar[[1]],drop = TRUE]
@@ -29,6 +29,7 @@ sshicm = \(formula, data, type = 'IC', seed = 42,
   }
   xtbl = dplyr::select(data,dplyr::all_of(formulavar[[2]]))
 
+  type = match.arg(type)
   if (type == "IC"){
     res = purrr::map_dfr(xtbl,
                          \(.x) sshic(yvec,.x,seed,
