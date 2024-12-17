@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sshicm
+# sshicm <a href="https://stscl.github.io/sshicm/"><img src="man/figures/logo.png" align="right" height="139" alt="sshicm website" /></a>
 
 <!-- badges: start -->
 
