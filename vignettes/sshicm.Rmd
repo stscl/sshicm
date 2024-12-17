@@ -94,9 +94,9 @@ sshicm(PRICE ~ .,baltim,type = "IC")
 ##   Variable     Ic    Pv
 ##   <chr>     <dbl> <dbl>
 ## 1 AC       0.223  0    
-## 2 PATIO    0.162  0.645
-## 3 FIREPL   0.135  0.659
-## 4 DWELL    0.124  0.722
+## 2 PATIO    0.162  0.643
+## 3 FIREPL   0.135  0.657
+## 4 DWELL    0.124  0.716
 ## 5 CITCOU   0.0898 0.988
 ```
 
@@ -119,11 +119,11 @@ sshicm(THEFT_D ~ .,cinc,type = "IN")
 ntds = gdverse::NTDs
 sshicm(incidence ~ watershed + elevation + soiltype,data = ntds)
 ## # A tibble: 3 × 3
-##   Variable     Ic    Pv
-##   <chr>     <dbl> <dbl>
-## 1 watershed 0.344     0
-## 2 elevation 0.173     0
-## 3 soiltype  0.128     0
+##   Variable     Ic      Pv
+##   <chr>     <dbl>   <dbl>
+## 1 elevation 0.306 0      
+## 2 watershed 0.205 0      
+## 3 soiltype  0.121 0.00200
 ```
 
 
