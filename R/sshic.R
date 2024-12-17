@@ -16,9 +16,7 @@
 #' baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 #' sshic(baltim$PRICE,baltim$DWELL)
 #' }
-sshic = \(d, s, seed = 42,
-          permutation_number = 999,
-          bin_method = "Sturges") {
+sshic = \(d, s, seed = 42, permutation_number = 999, bin_method = "Sturges") {
   s = as.integer(as.factor(s))
   res = IC_SSHICM(d,s,seed,permutation_number,bin_method)
   names(res) = c("Ic","Pv")
