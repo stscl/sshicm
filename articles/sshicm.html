@@ -65,7 +65,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Information Consistency-Based Measures for Spatial Stratified Heterogeneity</h1>
                         <h4 data-toc-skip class="author">Wenbo Lv</h4>
             
-            <h4 data-toc-skip class="date">2024-12-01</h4>
+            <h4 data-toc-skip class="date">2024-12-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/stscl/sshicm/blob/main/vignettes/sshicm.Rmd" class="external-link"><code>vignettes/sshicm.Rmd</code></a></small>
       <div class="d-none name"><code>sshicm.Rmd</code></div>
@@ -194,12 +194,12 @@ that the stratum is <span class="math inline">\(s_i\)</span>.</p>
 <code class="sourceCode R"><span><span class="va">baltim</span> <span class="op">=</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">read_sf</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/baltim.gpkg"</span>,package <span class="op">=</span> <span class="st">"sshicm"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/sshicm.html">sshicm</a></span><span class="op">(</span><span class="va">PRICE</span> <span class="op">~</span> <span class="va">.</span>,<span class="va">baltim</span>,type <span class="op">=</span> <span class="st">"IC"</span><span class="op">)</span></span>
 <span><span class="co">## # A tibble: 5 × 3</span></span>
-<span><span class="co">##   Variable     Ic      Pv</span></span>
-<span><span class="co">##   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">## 1 DWELL    0.648  0.00801</span></span>
-<span><span class="co">## 2 AC       0.223  0.0591 </span></span>
-<span><span class="co">## 3 PATIO    0.168  0.556  </span></span>
-<span><span class="co">## 4 FIREPL   0.135  0.667  </span></span>
+<span><span class="co">##   Variable     Ic    Pv</span></span>
+<span><span class="co">##   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">## 1 AC       0.223  0    </span></span>
+<span><span class="co">## 2 PATIO    0.162  0.643</span></span>
+<span><span class="co">## 3 FIREPL   0.135  0.657</span></span>
+<span><span class="co">## 4 DWELL    0.124  0.716</span></span>
 <span><span class="co">## 5 CITCOU   0.0898 0.988</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cinc</span> <span class="op">=</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">read_sf</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/cinc.gpkg"</span>,package <span class="op">=</span> <span class="st">"sshicm"</span><span class="op">)</span><span class="op">)</span></span>
@@ -216,11 +216,11 @@ that the stratum is <span class="math inline">\(s_i\)</span>.</p>
 <code class="sourceCode R"><span><span class="va">ntds</span> <span class="op">=</span> <span class="fu">gdverse</span><span class="fu">::</span><span class="va"><a href="https://stscl.github.io/gdverse/reference/NTDs.html" class="external-link">NTDs</a></span></span>
 <span><span class="fu"><a href="../reference/sshicm.html">sshicm</a></span><span class="op">(</span><span class="va">incidence</span> <span class="op">~</span> <span class="va">watershed</span> <span class="op">+</span> <span class="va">elevation</span> <span class="op">+</span> <span class="va">soiltype</span>,data <span class="op">=</span> <span class="va">ntds</span><span class="op">)</span></span>
 <span><span class="co">## # A tibble: 3 × 3</span></span>
-<span><span class="co">##   Variable     Ic     Pv</span></span>
-<span><span class="co">##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span><span class="co">## 1 elevation 0.293 0.0250</span></span>
-<span><span class="co">## 2 watershed 0.177 0.0521</span></span>
-<span><span class="co">## 3 soiltype  0.117 0.0671</span></span></code></pre></div>
+<span><span class="co">##   Variable     Ic      Pv</span></span>
+<span><span class="co">##   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">## 1 elevation 0.307 0      </span></span>
+<span><span class="co">## 2 watershed 0.171 0.00701</span></span>
+<span><span class="co">## 3 soiltype  0.117 0.00300</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a>
