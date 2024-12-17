@@ -22,9 +22,7 @@ A two-element numerical vector.
 Measurement of Spatial Stratified Heterogeneity Based on Information Consistency for Nominal Variables
 }
 \examples{
-\donttest{
-# This code may take a bit longer to execute:
 cinc = sf::read_sf(system.file("extdata/cinc.gpkg",package = "sshicm"))
 sshin(cinc$THEFT_D,cinc$MALE)
-}
+
 }

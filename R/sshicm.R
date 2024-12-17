@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # This code may take a bit longer to execute:
 #' baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 #' sshicm(PRICE ~ .,baltim,type = "IC")
