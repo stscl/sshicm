@@ -3,6 +3,7 @@
 
 # sshicm <a href="https://stscl.github.io/sshicm/"><img src="man/figures/logo.png" align="right" height="139" alt="sshicm website" /></a>
 
+<p align="right"; style="font-size:11px">logo by Sibyl</p>
 <!-- badges: start -->
 
 [![Lifecycle:
