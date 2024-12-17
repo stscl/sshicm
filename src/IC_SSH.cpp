@@ -15,7 +15,6 @@
 // [[Rcpp::depends(RcppThread)]]
 
 // Compute IC_SSH
-// [[Rcpp::export]]
 double IC_SSH(const std::vector<double>& d,
               const std::vector<int>& s,
               const std::string& bin_method) {
@@ -52,7 +51,6 @@ double IC_SSH(const std::vector<double>& d,
 }
 
 // IC_SSHICM: Parallel computation of IC_SSH over permutations, returning IC value and p-value
-// [[Rcpp::export]]
 std::vector<double> IC_SSHICM(const std::vector<double>& d,
                               const std::vector<int>& s,
                               unsigned int seed,

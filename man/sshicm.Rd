@@ -7,7 +7,7 @@
 sshicm(
   formula,
   data,
-  type = "IC",
+  type = c("IC", "IN"),
   seed = 42,
   permutation_number = 999,
   bin_method = "Sturges"

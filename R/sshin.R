@@ -17,7 +17,7 @@
 sshin = \(d, s, seed = 42, permutation_number = 999) {
   d = as.integer(as.factor(d))
   s = as.integer(as.factor(s))
-  res = IN_SSHICM(d,s,seed,permutation_number)
+  res = RcppINSSHICM(d,s,seed,permutation_number)
   names(res) = c("In","Pv")
   return(res)
 }
