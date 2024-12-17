@@ -91,12 +91,12 @@ library(sshicm)
 baltim = sf::read_sf(system.file("extdata/baltim.gpkg",package = "sshicm"))
 sshicm(PRICE ~ .,baltim,type = "IC")
 ## # A tibble: 5 × 3
-##   Variable     Ic    Pv
-##   <chr>     <dbl> <dbl>
-## 1 AC       0.223  0    
-## 2 PATIO    0.162  0.643
-## 3 FIREPL   0.135  0.657
-## 4 DWELL    0.124  0.716
+##   Variable     Ic      Pv
+##   <chr>     <dbl>   <dbl>
+## 1 AC       0.447  0.00501
+## 2 PATIO    0.162  0.643  
+## 3 FIREPL   0.135  0.657  
+## 4 DWELL    0.124  0.716  
 ## 5 CITCOU   0.0898 0.988
 ```
 
@@ -119,11 +119,11 @@ sshicm(THEFT_D ~ .,cinc,type = "IN")
 ntds = gdverse::NTDs
 sshicm(incidence ~ watershed + elevation + soiltype,data = ntds)
 ## # A tibble: 3 × 3
-##   Variable      Ic      Pv
-##   <chr>      <dbl>   <dbl>
-## 1 watershed 0.285  0.00400
-## 2 elevation 0.246  0.0110 
-## 3 soiltype  0.0793 0.198
+##   Variable     Ic     Pv
+##   <chr>     <dbl>  <dbl>
+## 1 elevation 0.329 0.0100
+## 2 watershed 0.140 0.0901
+## 3 soiltype  0.121 0.0250
 ```
 
 
