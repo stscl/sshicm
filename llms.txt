@@ -1,0 +1,57 @@
+# sshicm
+
+logo by Sibyl
+
+**Information Consistency-Based Measures for Spatial Stratified
+Heterogeneity**
+
+## Installation
+
+- Install from [CRAN](https://CRAN.R-project.org/package=sshicm) with:
+
+``` r
+install.packages("sshicm", dep = TRUE)
+```
+
+- Install binary version from
+  [R-universe](https://stscl.r-universe.dev/sshicm) with:
+
+``` r
+install.packages("sshicm",
+                 repos = c("https://stscl.r-universe.dev",
+                           "https://cloud.r-project.org"),
+                 dep = TRUE)
+```
+
+- Install from source code on [GitHub](https://github.com/stscl/sshicm)
+  with:
+
+``` r
+if (!requireNamespace("devtools")) {
+    install.packages("devtools")
+}
+devtools::install_github("stscl/sshicm",
+                         build_vignettes = TRUE,
+                         dep = TRUE)
+```
+
+# Package index
+
+## Information Consistency-Based Measures for Spatial Stratified Heterogeneity
+
+- [`sshicm()`](https://stscl.github.io/sshicm/reference/sshicm.md) :
+  Information Consistency-Based Measures for Spatial Stratified
+  Heterogeneity
+- [`sshic()`](https://stscl.github.io/sshicm/reference/sshic.md) :
+  Measurement of Spatial Stratified Heterogeneity Based on Information
+  Consistency for Continuous Variables
+- [`sshin()`](https://stscl.github.io/sshicm/reference/sshin.md) :
+  Measurement of Spatial Stratified Heterogeneity Based on Information
+  Consistency for Nominal Variables
+
+# Articles
+
+### All vignettes
+
+- [Information Consistency-Based Measures for Spatial Stratified
+  Heterogeneity](https://stscl.github.io/sshicm/articles/sshicm.md):
