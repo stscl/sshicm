@@ -23,6 +23,7 @@ knitr::opts_chunk$set(
 [![DownloadsAll](https://badgen.net/cran/dt/sshicm?color=orange)](https://CRAN.R-project.org/package=sshicm)
 [![DownloadsMonth](https://cranlogs.r-pkg.org/badges/sshicm)](https://CRAN.R-project.org/package=sshicm)
 [![R-universe](https://stscl.r-universe.dev/badges/sshicm?color=cyan)](https://stscl.r-universe.dev/sshicm)
+[![R-CMD-check](https://github.com/stscl/sshicm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/stscl/sshicm/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **Information Consistency-Based Measures for Spatial Stratified Heterogeneity**
