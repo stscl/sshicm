@@ -4,6 +4,7 @@
 # sshicm <a href="https://stscl.github.io/sshicm/"><img src="man/figures/logo.png" align="right" height="250" alt="sshicm website" /></a>
 
 <p align="right"; style="font-size:11px">logo by Sibyl</p>
+
 <!-- badges: start -->
 
 [![Lifecycle:
@@ -12,6 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-cyan.svg)](htt
 [![DownloadsAll](https://badgen.net/cran/dt/sshicm?color=orange)](https://CRAN.R-project.org/package=sshicm)
 [![DownloadsMonth](https://cranlogs.r-pkg.org/badges/sshicm)](https://CRAN.R-project.org/package=sshicm)
 [![R-universe](https://stscl.r-universe.dev/badges/sshicm?color=cyan)](https://stscl.r-universe.dev/sshicm)
+[![R-CMD-check](https://github.com/stscl/sshicm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/stscl/sshicm/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **Information Consistency-Based Measures for Spatial Stratified
